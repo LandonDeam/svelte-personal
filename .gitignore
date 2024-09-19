@@ -23,3 +23,6 @@ vite.config.ts.timestamp-*
 # Lockfile
 package-lock.json
 yarn.lock
+
+#Images for Slideshow
+static/images/*

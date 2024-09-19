@@ -1,10 +1,6 @@
 <script>
   import Slideshow from '../Slideshow.svelte'; // Adjust the path as necessary
 
-  let aboutMe1 = "I'm a dev that's way into a ton of topics such as Dev Ops, Machine Learning, Cyber Security, Statistics, Audio, Video, Photography, and a whole lot more. I'm even running this website on my personal desktop running Arch Linux through nginx right now!";
-  let aboutMe2 = "A lot of my personal projects are more oriented towards what works for my setup, but I really do want the opportunity to make things that work across many devices and platforms.";
-  let aboutMe3 = "Enjoy a slideshow of some of my pictures I've taken in the last year :)"
-
   let images = [
     '/images/31209504_Unknown.jpeg',
     '/images/32260720_Unknown.jpeg',
@@ -37,7 +33,13 @@
 
   <section class="about">
     <h2>About</h2>
-    <p>{aboutMe1}<br><br>{aboutMe2}<br><br>{aboutMe3}</p>
+    <p>
+      I'm a dev that's way into a ton of topics such as <b>Dev Ops, Machine Learning, Cyber Security, Statistics, Audio, Video, Photography</b>, and a whole lot more. I'm even running this website on my personal desktop running <b>Arch Linux</b> through <b>nginx</b> right now!
+      <br><br>
+      A lot of my personal projects are more oriented towards what works for my setup, but I really do want the opportunity to make things that work across many devices and platforms.
+      <br><br>
+      Enjoy a slideshow of some of my pictures I've taken over the last year :)
+    </p>
   </section>
 
   <Slideshow {images} />
@@ -67,7 +69,7 @@
   }
 
   .about {
-    max-width: 615px;
+    max-width: 800px;
     width: 100%;
     margin: 20px auto;
     padding: 10px;
@@ -79,7 +81,7 @@
     box-sizing: border-box; /* Include padding in total width calculation */
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .about {
       padding: 15px; /* Adjust padding for mobile */
       max-width: 90%; /* Limit max-width for mobile */

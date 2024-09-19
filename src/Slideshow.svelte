@@ -46,12 +46,14 @@
     height: 700px; /* Fixed height for consistency */
     overflow: hidden; /* Hide overflow to maintain aspect ratio */
     position: relative; /* For positioning the image */
+    border-radius: 10px;
   }
 
   .image {
     width: auto; /* Maintain original aspect ratio */
     height: 100%; /* Ensure the image takes full height of the wrapper */
     object-fit: cover; /* Cover the space without distortion */
+    border-radius: 10px;
   }
 
   .nav-button {

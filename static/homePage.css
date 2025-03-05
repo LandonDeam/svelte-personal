@@ -1,0 +1,46 @@
+.links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* White background for the links section */
+    border-radius: 80px; /* Rounded edges */
+    padding: 0px; /* Padding for spacing */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.25); /* Subtle shadow */
+    margin: 5px auto; /* Margin for spacing */
+    max-width: 400px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    height: 40px; /* Adjust size as needed */
+    margin: 0 10px; /* Space between icons */
+}
+
+.about {
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #333; /* Dark border */
+    border-radius: 5px;
+    text-align: center;
+    background-color: #1e1e1e; /* Slightly lighter background for the about section */
+    box-shadow: -1px 4px 10px rgba(255, 255, 255, 0.2); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding in total width calculation */
+}
+
+@media (max-width: 800px) {
+    .about {
+    padding: 15px; /* Adjust padding for mobile */
+    max-width: 90%; /* Limit max-width for mobile */
+    }
+
+    .links-container {
+    padding: 10px;
+    max-width: 70%;
+    }
+}

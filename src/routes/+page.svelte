@@ -1,6 +1,5 @@
 <script>
   import Slideshow from '../Slideshow.svelte'; // Adjust the path as necessary
-  import { onMount } from 'svelte';
 
   let images = [
     '/images/31209504_Unknown.jpeg',
@@ -16,23 +15,6 @@
     '/images/34100896_Unknown.jpeg',
     '/images/34101024_Unknown.jpeg'
   ];
-
-  onMount(async () => {
-    try {
-        const response = await fetch('http://landondeam.com/visit/log-visitor', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-    } catch (error) {
-        console.error('Error logging visitor:', error);
-    }
-  });
 </script>
 
 <main>

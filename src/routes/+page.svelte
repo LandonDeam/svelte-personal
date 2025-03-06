@@ -38,7 +38,7 @@
   <section class="about">
     <h2>About</h2>
     <p>
-      I'm a dev that's way into a ton of topics such as <b>Dev Ops, Machine Learning, Cyber Security, Statistics, Audio, Video, Photography</b>, and a whole lot more. I'm even running this website on my personal desktop running <b>Arch Linux</b> through <b>nginx</b> right now!
+      I'm a dev that's way into a ton of topics such as <b>Dev Ops, Machine Learning, Cyber Security, Statistics, Audio, Video, Photography</b>, and a whole lot more. I'm even running this website on my personal desktop (running <b>Arch Linux</b>) through <b>nginx</b> right now!
       <br><br>
       A lot of my personal projects are more oriented towards what works for my setup, but I really do want the opportunity to make things that work across many devices and platforms.
       <br><br>

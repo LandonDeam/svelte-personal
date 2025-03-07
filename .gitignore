@@ -21,7 +21,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Lockfile
-package-lock.json
+# package-lock.json
 yarn.lock
 
 #Images for Slideshow

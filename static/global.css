@@ -36,3 +36,34 @@ h1 {
   text-align: center;
   background-color: #1e1e1e; /* Slightly lighter background for the about section */
 }
+
+nav {
+  display: flex;
+  border-radius: 10px;
+  background: linear-gradient(130deg, #440404, #570f21, #121212) no-repeat;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin: 5px auto;
+  animation: nav-anim 1s ease infinite;
+  -moz-animation: nav-anim 1s ease infinite;
+}
+
+@keyframes nav-anim {
+  0% { background-position: 10% 0%; }
+  50% { background-position: 91% 100%; }
+  100% { background-position: 10% 0%; }
+}
+
+@-moz-keyframes nav-anim {
+  0% { background-position: 10% 0%; }
+  50% { background-position: 91% 100%; }
+  100% { background-position: 10% 0%; }
+}
+
+nav > a {
+  padding: 5px 10px;
+  font-size: 20pt;
+  color: white;
+  font-variant: small-caps;
+  text-decoration: none;
+}

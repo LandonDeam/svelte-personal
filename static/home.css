@@ -1,7 +1,7 @@
 .scan-in h1 {
   overflow: hidden;
   letter-spacing: .05em;
-  background: linear-gradient(rgb(172, 0, 120), rgb(115, 0, 192)) no-repeat;
+  background: linear-gradient(rgb(127, 214, 230), #0783bd) no-repeat;
   background-size: 100% 0%;
   animation:
     expandShrink 1.5s ease-in-out forwards,

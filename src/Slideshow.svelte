@@ -1,10 +1,9 @@
 <!-- src/Slideshow.svelte -->
 <script>
-  /**
-  * @type {string | any[]}
-  */
-  export let images = []; // Array of image URLs
-  let currentIndex = 0;
+  
+  /** @type {{images?: string | any[]}} */
+  let { images = [] } = $props();
+  let currentIndex = $state(0);
 
   function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
@@ -18,12 +17,12 @@
 </script>
 
 <div class="slideshow">
-  <button on:click={prevImage} class="nav-button">❮</button>
-  <!-- svelte-ignore a11y-img-redundant-alt -->
+  <button onclick={prevImage} class="nav-button">❮</button>
+  <!-- svelte-ignore a11y_img_redundant_alt -->
    <div class="image-wrapper">
       <img src={images[currentIndex]} alt="Slideshow image" class="image" />
    </div>
-  <button on:click={nextImage} class="nav-button">❯</button>
+  <button onclick={nextImage} class="nav-button">❯</button>
 </div>
 
 <style>

@@ -1,0 +1,30 @@
+.scan-in h1 {
+  overflow: hidden;
+  letter-spacing: .05em;
+  background: linear-gradient(rgb(172, 0, 120), rgb(115, 0, 192)) no-repeat;
+  background-size: 100% 0%;
+  animation:
+    expandShrink 1.5s ease-in-out forwards,
+    moveBackground 1.5s steps(1, end) forwards;
+}
+  
+@keyframes text-in {
+  from { height: 0 }
+  to { height: 100% }
+}
+
+@keyframes expandShrink {
+  0% { background-size: 100% 0%; }
+  50% { background-size: 100% 100%; }
+  100% { background-size: 100% 5px; }
+}
+
+@keyframes moveBackground {
+    0% { background-position: top; }
+    50% { background-position: bottom; }
+    100% { background-position: bottom; }
+}
+
+h1:first-of-type {
+    font-size: 100pt;
+}

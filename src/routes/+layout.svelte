@@ -9,3 +9,7 @@
 </nav>
 
 {@render children()}
+
+<footer>
+    <a href="mailto:landondeam@gmail.com" target="_blank">Email me</a>
+</footer>

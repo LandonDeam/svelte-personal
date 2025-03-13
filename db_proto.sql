@@ -6,8 +6,23 @@ ID int NOT NULL AUTO_INCREMENT,
 username varchar(30) NOT NULL,
 email varchar(100) NOT NULL,
 pass_hash BINARY(60) NOT NULL, -- bcrypt
+`created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`last_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
 PRIMARY KEY(ID)
+);
+
+CREATE TABLE `userperms`(
+userID int NOT NULL,
+permID varchar(60) NOT NULL,
+`value` varchar(100) NOT NULL,
+
+FOREIGN KEY(userID)
+	REFERENCES `user`(ID)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
+
+PRIMARY KEY(userID, permID)
 );
 
 CREATE TABLE `postrevision`(
@@ -17,6 +32,7 @@ authorID int NOT NULL,
 title varchar(100),
 url varchar(100),
 content MEDIUMTEXT,
+`timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
 FOREIGN KEY(postID)
 	REFERENCES `post`(ID)
@@ -38,6 +54,7 @@ postID int NOT NULL,
 replyID int,
 userID int NOT NULL,
 text varchar(2000),
+`timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
 FOREIGN KEY(postID)
 	REFERENCES `post`(ID)

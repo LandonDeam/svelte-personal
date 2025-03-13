@@ -71,3 +71,39 @@ FOREIGN KEY(userID)
 
 PRIMARY KEY(ID)
 );
+
+CREATE TABLE `commentreaction`(
+userID int NOT NULL,
+commentID int NOT NULL,
+reactionID int NOT NULL,
+`timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+FOREIGN KEY(userID)
+	REFERENCES `user`(ID)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
+FOREIGN KEY(commentID)
+	REFERENCES `comment`(ID)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
+
+PRIMARY KEY (userID, commentID, reactionID)
+);
+
+CREATE TABLE `postreaction`(
+userID int NOT NULL,
+postID int NOT NULL,
+reactionID int NOT NULL,
+`timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+FOREIGN KEY(userID)
+	REFERENCES `user`(ID)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
+FOREIGN KEY(postID)
+	REFERENCES `post`(ID)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
+
+PRIMARY KEY (userID, postID, reactionID)
+);

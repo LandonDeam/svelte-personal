@@ -1,6 +1,19 @@
 .scan-in {
   overflow: hidden;
+  will-change: background-position;
+  background: -webkit-linear-gradient(#B3FFFF, #69A6EB) no-repeat;
+  background: -moz-linear-gradient(#B3FFFF, #69A6EB) no-repeat;
   background: linear-gradient(#B3FFFF, #69A6EB) no-repeat;
+  background-size: 100% 5px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-animation:
+    expandShrink 1.5s ease-in-out forwards,
+    moveBackground 1.5s steps(1, end) forwards;
+  -moz-animation:
+    expandShrink 1.5s ease-in-out 0.01s forwards,
+    moveBackground 1.5s steps(1, end) 0.01s forwards;
   animation:
     expandShrink 1.5s ease-in-out forwards,
     moveBackground 1.5s steps(1, end) forwards;
@@ -11,16 +24,40 @@
   to { height: 100% }
 }
 
+@-webkit-keyframes expandShrink {
+  0% { background-size: 100% 0%; }
+  50% { background-size: 100% 100%; }
+  100% { background-size: 100% 5px; }
+}
+
+@-webkit-keyframes moveBackground {
+  0% { background-position: top; }
+  50% { background-position: bottom; }
+  100% { background-position: bottom; }
+}
+
+@-moz-keyframes expandShrink {
+  0% { background-size: 100% 0%; }
+  50% { background-size: 100% 100%; }
+  100% { background-size: 100% 5px; }
+}
+
+@-moz-keyframes moveBackground {
+  0% { background-position: top; }
+  50% { background-position: bottom; }
+  100% { background-position: bottom; }
+}
+
 @keyframes expandShrink {
-  0% { background-size: 800px 0%; }
-  50% { background-size: 800px 100%; }
-  100% { background-size: 800px 5px; }
+  0% { background-size: 100% 0%; }
+  50% { background-size: 100% 100%; }
+  100% { background-size: 100% 5px; }
 }
 
 @keyframes moveBackground {
-    0% { background-position: top; }
-    50% { background-position: bottom; }
-    100% { background-position: bottom; }
+  0% { background-position: top; }
+  50% { background-position: bottom; }
+  100% { background-position: bottom; }
 }
 
 h1.title {
@@ -30,19 +67,33 @@ h1.title {
 
 .links-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-color: white; /* White background for the links section */
   border-radius: 80px; /* Rounded edges */
-  padding: 0px; /* Padding for spacing */
+  padding: 5px; /* Padding for spacing */
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.25); /* Subtle shadow */
   margin: 5px auto; /* Margin for spacing */
+  width: 100%;
   max-width: 600px;
+  min-height: 70px;
 }
 
-.links {
-  display: flex;
-  justify-content: center;
+.link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #bb86fc; /* Light purple for links */
+  transition: color 0.3s;
+  height: auto;
+  max-height: 65px;
+  max-width: 100%;
+  display: block;
+}
+
+.link:hover {
+  color: #3700b3; /* Darker purple on hover */
+  transform: translateY(-4px);
 }
 
 .icon {

@@ -1,28 +1,65 @@
 <!-- src/Slideshow.svelte -->
-<script>
-  
-  /** @type {{images?: string | any[]}} */
-  let { images = [] } = $props();
-  let currentIndex = $state(0);
+<script lang="ts">
+  import { onMount, onDestroy } from 'svelte';
 
-  function nextImage() {
+  export let images: string[] = [];
+
+  let currentIndex = 0;
+  let intervalId: ReturnType<typeof setInterval> | null = null;
+  let pauseTimeoutId: ReturnType<typeof setTimeout> | null = null;
+
+  function startSlideshow(): void {
+    stopSlideshow(); // Ensure no existing interval
+    intervalId = setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+    }, 3000); // Change image every 3 seconds
+  }
+
+  function stopSlideshow(): void {
+    if (intervalId !== null) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }
+
+  function pauseSlideshow(): void {
+    stopSlideshow();
+    if (pauseTimeoutId !== null) {
+      clearTimeout(pauseTimeoutId);
+    }
+    pauseTimeoutId = setTimeout(() => {
+      startSlideshow();
+    }, 15000); // Pause for 15 seconds
+  }
+
+  function nextImage(): void {
     currentIndex = (currentIndex + 1) % images.length;
+    pauseSlideshow();
   }
 
-  function prevImage() {
+  function prevImage(): void {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
+    pauseSlideshow();
   }
 
-  setInterval(nextImage, 3000); // Change image every 3 seconds
+  onMount(() => {
+    startSlideshow();
+  });
+
+  onDestroy(() => {
+    stopSlideshow();
+    if (pauseTimeoutId !== null) {
+      clearTimeout(pauseTimeoutId);
+    }
+  });
 </script>
 
 <div class="slideshow">
-  <button onclick={prevImage} class="nav-button">❮</button>
-  <!-- svelte-ignore a11y_img_redundant_alt -->
-   <div class="image-wrapper">
-      <img src={images[currentIndex]} alt="Slideshow image" class="image" />
-   </div>
-  <button onclick={nextImage} class="nav-button">❯</button>
+  <button on:click={prevImage} class="nav-button">❮</button>
+  <div class="image-wrapper">
+    <img src={images[currentIndex]} alt="Slideshow image" class="image" />
+  </div>
+  <button on:click={nextImage} class="nav-button">❯</button>
 </div>
 
 <style>

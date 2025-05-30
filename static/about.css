@@ -10,15 +10,3 @@
   box-shadow: -1px 4px 10px rgba(255, 255, 255, 0.2); /* Subtle shadow */
   box-sizing: border-box; /* Include padding in total width calculation */
 }
-
-@media (max-width: 800px) {
-  .about {
-  padding: 15px; /* Adjust padding for mobile */
-  max-width: 90%; /* Limit max-width for mobile */
-  }
-
-  .links-container {
-  padding: 10px;
-  max-width: 70%;
-  }
-}

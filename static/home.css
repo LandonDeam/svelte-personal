@@ -37,7 +37,7 @@ h1.title {
   padding: 0px; /* Padding for spacing */
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.25); /* Subtle shadow */
   margin: 5px auto; /* Margin for spacing */
-  max-width: 400px;
+  max-width: 600px;
 }
 
 .links {
@@ -50,27 +50,52 @@ h1.title {
   margin: 0 10px; /* Space between icons */
 }
 
-.about {
-  max-width: 800px;
-  width: 100%;
+.project-card {
+  background-color: #1e1e1e; /* Slightly lighter dark background */
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
   margin: 20px auto;
-  padding: 10px;
-  border: 1px solid #333; /* Dark border */
-  border-radius: 5px;
-  text-align: center;
-  background-color: #1e1e1e; /* Slightly lighter background for the about section */
-  box-shadow: -1px 4px 10px rgba(255, 255, 255, 0.2); /* Subtle shadow */
-  box-sizing: border-box; /* Include padding in total width calculation */
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-@media (max-width: 800px) {
-  .about {
-  padding: 15px; /* Adjust padding for mobile */
-  max-width: 90%; /* Limit max-width for mobile */
-  }
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
 
-  .links-container {
-  padding: 10px;
-  max-width: 70%;
-  }
+.project-subtitle {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+}
+
+
+.project-title {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.project-title a {
+  color: #bb86fc; /* Light purple */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-title a:hover {
+  color: #3700b3; /* Darker purple */
+}
+
+.project-description {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #dddddd;
+  text-align: center;
 }

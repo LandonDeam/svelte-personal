@@ -3,13 +3,13 @@
 </script>
 
 <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/blog">Blog</a>
 </nav>
 
 {@render children()}
 
 <footer>
-    <a href="mailto:landondeam@gmail.com" target="_blank">Email me</a>
+  <a href="mailto:landondeam@gmail.com" target="_blank">Email me</a>
 </footer>

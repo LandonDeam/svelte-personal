@@ -2,12 +2,24 @@ body {
   background-color: #121212; /* Dark background */
   color: #ffffff; /* Light text */
   font-family: Arial, sans-serif;
+}
+
+html, body {
+  min-height: 100vh;
+  height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 h1 {
   text-align: center;
-  margin-top: 15px;
+  margin: 0;
+  padding-top: 15px;
 }
 
 .links {
@@ -42,8 +54,7 @@ nav {
   background: linear-gradient(130deg, #440404, #570f21, #121212) no-repeat;
   font-family: Arial, sans-serif;
   width: 100%;
-  margin: 5px auto;
-  margin-top: 0;
+  margin: 0;
   animation: nav-anim 1s ease infinite;
   -moz-animation: nav-anim 1s ease infinite;
 }
@@ -60,26 +71,39 @@ nav {
   100% { background-position: 10% 0%; }
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 nav > a {
   padding: 5px 10px;
   font-size: 20pt;
-  color: white;
   font-variant: small-caps;
-  text-decoration: none;
 }
 
 footer {
   border-color: #69A6EB;
   border-width: 3px 0 0 0;
   border-style: solid;
-  padding-top: 20px;
-  margin-top: 10px;
+  padding-top: 15px;
+  margin: 0;
+  display: flex;
 }
 
 footer > a {
-  padding: 5px 10px;
+  margin: 5px 5px 5px 5px;
+  flex: 1 1 auto;
   font-size: 14pt;
   color: white;
   font-variant: small-caps;
   text-decoration: none;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.new-section {
+  margin-top: 10px;
 }
